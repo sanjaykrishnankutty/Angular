@@ -1,0 +1,23 @@
+﻿
+<html ng-app="app">
+<head>
+    <title>HelloWorld</title>
+</head>
+<body>
+    <h1>Hello, World!!</h1>
+    {{12+13}}
+
+    <div ng-controller="mainController">
+        <div ng-repeat-start="element in users">
+           <strong>{{element.Name}}</strong>:{{element.Age}}
+        </div>
+        <hr ng-repeat-end />
+         <!--{{value}}
+        <button ng-click="inc()">Click me</button>
+        <h1 ng-hide="even">Odd</h1>
+        <h1 ng-show="even">Even</h1>-->
+    </div>
+    <script type="text/javascript" src="scripts/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+</body>
+</html>

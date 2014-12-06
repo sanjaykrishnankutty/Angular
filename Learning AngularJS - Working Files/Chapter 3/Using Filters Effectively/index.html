@@ -1,0 +1,13 @@
+<html ng-app="app">
+  <body>
+    <div ng-controller="MainController">
+      <input ng-model="myfilter.name">
+      <div ng-repeat="user in mydata.arr | filter:myfilter | orderBy:'age' | limitTo:2">
+        {{ user }}
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

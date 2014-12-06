@@ -1,0 +1,44 @@
+<html ng-app="app">
+  <head>
+    <style>
+    .row {
+      border:1px solid blue;
+      display:table;
+      margin:5px;
+    }
+    .col {
+      border:1px solid orange;
+      float:left;
+      margin:5px;
+    }
+    </style>
+  </head>
+  <body>
+    <div ng-controller="MainController">
+
+      <row>
+        <column>A</column>
+        <column>B</column>
+        <column>C</column>
+      </row>
+      <row>
+        <column>D</column>
+        <column>E</column>
+        <column>
+          <row>
+            <column>F</column>
+          </row>
+          <row>
+            <column>G</column>
+            <column>H</column>
+            <column>I</column>
+          </row>
+        </column>
+      </row>
+
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

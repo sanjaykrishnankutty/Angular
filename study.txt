@@ -1,0 +1,129 @@
+Angular is a modular framework
+Angular is single page applications
+Javascript framework for databinding - real time synchronization, 2 way binding
+It uses plain javascript
+deep linking - handling all routing via single page
+It helps in taking to external api's
+testable,injectable and embedabble
+
+Best practises
+seperation
+dry programming - dont repeat urself
+dont hack
+dont write bad code
+keep performance in mind
+reusability
+testing
+
+building blocks
+interpolation {{12+13}}
+controllers (ng-contoller)
+
+ng-click - registers click event
+ng-show
+ng-hide
+
+calling functions in directives is a bad practise.performance issues
+ng-click is fine since it is invoked only during click event
+
+ng-repeat-used to iterate through collections
+ng-repeat-start
+ng-repeat-end
+
+<div ng-repeat-start="element in users track by $index">
+$start
+$end
+$middle
+above are booleans
+
+array by primitive types can have duplicate elements
+
+ng-template - create templates text/ng-template,id
+ng-include - include template by id
+ng-class - css class
+ng-model - 2 way data binding, always have a dot in model name to handle javascript inheritance issues
+
+
+ $scope.$watch('mydata.val',function(newval)
+    {
+        $scope.mydata.toolong=newval.length>15
+    })
+
+ng-cloak- will prevent display until everything is loaded
+
+filters are used for modifying arrays, strings etc
+
+<input ng-model="myfilter.name" />
+        <div ng-repeat="user in mydata.arr | filter:myfilter">
+            <h1>{{user}}</h1>
+        </div>
+
+<div ng-repeat="user in mydata.arr | filter:myfilter | orderBy:'age' | limitTo:2">
+            <h1>{{user}}</h1>
+        </div>
+
+filters should be in a view
+
+custom filters
+app.filter('minAge',function()
+{
+    return function(data,age)
+    {
+        var filtered=[]
+        if (!data) {
+            return ''
+        }
+
+        if (!age) {
+            age=21
+        }
+
+        for (var i = 0; i < data.length; i++)
+        {
+            var value = data[i]
+            if (value.age >= age) {
+                filtered.push(data[i])
+            }
+        }
+
+        return filtered
+    }
+}
+
+
+constant service cannot be decorated whereas values can be decorated
+
+service types
+constant
+values
+factory
+service
+providers
+decorator
+
+app.factory('myDecoratorFactory', function () {
+    var myString = "this is some string"
+    var addToString = function (newdata){ 
+        myString+=newdata
+    }
+
+    return {
+        getData: function () { return myString },
+        setData: function (data) { myString = data },
+        addData:addToString
+    }
+})
+
+app.config(function($provide){
+    $provide.decorator('myDecoratorFactory',function($delegate){
+        $delegate.reverse = function ()
+        {
+            $delegate.setData($delegate.getData().split('').reverse().join(''))
+        }
+    }
+    )
+})
+
+directive can be an element,attribute,comment and class
+
+restrict: 'A' 'E' 'C' 'M' M-comment

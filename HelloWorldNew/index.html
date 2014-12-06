@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>HelloWorld</title>
+    <style>
+        .orange {
+           color:orange;
+        }
+        .italic {
+            font-style:italic;
+        }
+    </style>
+</head>
+<body>
+    <h1 ng-class="'orange'">Hello World!</h1>
+   <!-- {{12+13}}-->
+    <div ng-controller="mainController">
+        <photo src="{{photo.url}}" caption="Taken on: {{photo.date}}" />
+        <!--{{val}}
+        <button ng-click="inc()">Click Me</button>
+
+        <h2 ng-show="IsEven()">Even</h2>
+        <h2 ng-hide="IsEven()">Odd</h2>
+        <div ng-repeat="element in myarr">
+            {{element}}
+        </div>
+         <div ng-repeat-start="element in users track by $index">
+            {{element.name}} {{element.age}}
+        </div>
+        <hr ng-repeat-end />
+        <div ng-include="'test.html'">-->
+           
+      <!--<button ng-click="increment()">Click</button>
+      <button ng-click="break()">Break</button>
+      <h1>{{datas}}</h1>-->
+
+       <!-- <input ng-model="mydata.val" />
+        <h1>{{mydata.val}}</h1>
+        <span ng-show="mydata.toolong">
+            too long!
+        </span>-->
+        <!--<input ng-model="myfilter.name" />
+        <div ng-repeat="user in mydata.arr | filter:myfilter | orderBy:'age' | limitTo:2">
+            <h1>{{user}}</h1>
+        </div>-->
+        <!--<input ng-model="mydata.str" />
+        {{mydata.str | charLimit}}-->
+        <!--<div ng-repeat="user in mydata.arr | minAge">
+            {{user}}
+        </div>-->
+    </div>
+   <!-- <script type="text/ng-template" id="test.html">
+        <h1>My Template</h1>
+    </script>-->
+    <script type="text/javascript" src="scripts/angular.js" ></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+</body>
+</html>

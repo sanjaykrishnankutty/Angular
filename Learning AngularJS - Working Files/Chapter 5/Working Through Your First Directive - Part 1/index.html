@@ -1,0 +1,30 @@
+<html ng-app="app">
+  <body>
+    <div ng-controller="MainController">
+
+    <div>
+      <photo photo-src="{{photo.url}}" 
+        caption="Taken on: {{photo.date}}"/>
+    </div>
+<!--     <div>
+      <div photo photo-src="{{photo.url}}" 
+        caption="Taken on: {{photo.date}}"></div>
+    </div>
+    <div>
+      <div class="photo" photo-src="{{photo.url}}" 
+        caption="Taken on: {{photo.date}}"></div> -->
+    </div>
+    <div>
+      <!--  directive: photo -->
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/ng-template" id="photo.html">
+      <figure>
+        <img width="500px" ng-src="{{photoSrc}}"/>
+        <figcaption>{{caption}}</figcaption>
+      </figure>
+    </script>
+  </body>
+</html>

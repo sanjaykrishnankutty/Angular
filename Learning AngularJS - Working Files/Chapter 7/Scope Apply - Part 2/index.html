@@ -1,0 +1,13 @@
+<html ng-app="app">
+  <body>
+    <div ng-controller="MainController">
+      <clickable foo="foo"></clickable>
+      
+      <button ng-click="update()">Update with implicit $apply()</button>
+      <span ng-show="false" ng-model="val"></span>
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

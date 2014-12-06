@@ -1,0 +1,19 @@
+<html ng-app="app">
+  <body>
+    <div ng-controller="MainController">
+    <button ng-click="broadClick('Main')">Main Broadcast</button>
+    <button ng-click="emitClick('Main')">Main Emit</button>
+      <div ng-controller="MiddleController">
+        <button ng-click="broadClick('Middle')">Middle Broadcast</button>
+        <button ng-click="emitClick('Middle')">Middle Emit</button>
+        <div ng-controller="BottomController">
+          <button ng-click="broadClick('Bottom')">Bottom Broadcast</button>
+          <button ng-click="emitClick('Bottom')">Bottom Emit</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
